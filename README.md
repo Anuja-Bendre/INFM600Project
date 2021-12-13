@@ -9,5 +9,5 @@ This repository contains our basic mockups, implementation and a comprehensive l
 
 blockchain.py - This file contains a basic implementation of Blockchain in Python.
 
-
+DataGovernance.sol - Defines a smart contract that implements data governance written in Solidity.
 
