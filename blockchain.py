@@ -36,7 +36,7 @@ class Blockchain:
             if hash_operation[:4] == '0000': #if first 4 values of hash are leading zeros then the miner approves the block, finds the new proof 
                 check_proof = True
             else:
-                new_proof += 1 #try with the next proof to see if it starts with4 leading zeros 
+                new_proof += 1 #try with the next proof to see if it starts with 4 leading zeros 
         return new_proof
     
     def hash(self, block): #return the hash of the block
@@ -48,11 +48,11 @@ class Blockchain:
         block_index = 1
         while block_index < len(chain):
             block = chain[block_index] #current block
-            if block['previous_hash'] != self.hash(previous_block): #if previous block has does not match
+            if block['previous_hash'] != self.hash(previous_block): #if previous block hash does not match
                 return False
             previous_proof = previous_block['proof'] #proof of previous block 
             proof = block['proof'] #proof of current block 
-            hash_operation = hashlib.sha256(str(proof**2 - previous_proof**2).encode()).hexdigest() #chech if hash operation starts with4 leading zeros
+            hash_operation = hashlib.sha256(str(proof**2 - previous_proof**2).encode()).hexdigest() #check if hash operation starts with 4 leading zeros
             if hash_operation[:4] != '0000':
                 return False
             previous_block = block #previous block has to turn into current block 
@@ -95,6 +95,7 @@ def get_chain():
 
 # Checking if the blockchain is valid 
     
+@app.route('/is_valid', methods = ['GET'])
 def is_valid():
     is_valid = blockchain.is_chain_valid(blockchain.chain)
     if is_valid:
