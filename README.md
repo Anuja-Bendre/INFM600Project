@@ -7,5 +7,7 @@ This project is a deliverable for one of our courses, INFM-600 - Information Env
 
 This repository contains our basic mockups, implementation and a comprehensive literature survey on Data Governance, Blockchain, Smart Contracts, IP Licensing and Social Entreprenuership.
 
+blockchain.py - This file contains a basic implementation of Blockchain in Python.
+
 
 
